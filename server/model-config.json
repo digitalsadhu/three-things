@@ -40,5 +40,9 @@
   "ThingTag": {
     "dataSource": "db",
     "public": false
+  },
+  "user": {
+    "dataSource": "db",
+    "public": true
   }
 }
