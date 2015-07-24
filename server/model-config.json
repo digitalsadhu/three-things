@@ -35,5 +35,9 @@
   "thing": {
     "dataSource": "db",
     "public": true
+  },
+  "tag": {
+    "dataSource": "db",
+    "public": true
   }
 }
