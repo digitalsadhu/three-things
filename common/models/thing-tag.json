@@ -6,18 +6,18 @@
     "validateUpsert": true
   },
   "properties": {
-    "thing_id": {
+    "thingId": {
       "type": "number",
       "required": true
     },
-    "tag_id": {
+    "tagId": {
       "type": "number",
       "required": true
     },
-    "created_at": {
+    "createdAt": {
       "type": "date"
     },
-    "updated_at": {
+    "updatedAt": {
       "type": "date"
     }
   },

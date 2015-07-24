@@ -11,10 +11,10 @@
       "type": "string",
       "required": true
     },
-    "created_at": {
+    "createdAt": {
       "type": "date"
     },
-    "updated_at": {
+    "updatedAt": {
       "type": "date"
     }
   },

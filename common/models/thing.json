@@ -15,14 +15,14 @@
       "type": "date",
       "required": true
     },
-    "user_id": {
+    "userId": {
       "type": "number",
       "required": true
     },
-    "created_at": {
+    "createdAt": {
       "type": "date"
     },
-    "updated_at": {
+    "updatedAt": {
       "type": "date"
     }
   },
