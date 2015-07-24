@@ -39,5 +39,9 @@
   "tag": {
     "dataSource": "db",
     "public": true
+  },
+  "thing_tag": {
+    "dataSource": "db",
+    "public": false
   }
 }
