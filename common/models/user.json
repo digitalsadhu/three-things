@@ -15,7 +15,13 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "things": {
+      "type": "hasMany",
+      "model": "Thing",
+      "foreignKey": "userId"
+    }
+  },
   "acls": [],
   "methods": []
 }

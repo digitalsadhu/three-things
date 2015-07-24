@@ -33,6 +33,11 @@
       "model": "Tag",
       "foreignKey": "thingId",
       "through": "ThingTag"
+    },
+    "user": {
+      "type": "belongsTo",
+      "model": "user",
+      "foreignKey": "userId"
     }
   },
   "acls": [],
