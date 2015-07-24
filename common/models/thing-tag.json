@@ -1,5 +1,5 @@
 {
-  "name": "thing_tag",
+  "name": "ThingTag",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {

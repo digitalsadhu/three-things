@@ -1,6 +1,6 @@
 {
-  "name": "tag",
-  "plural": "tags",
+  "name": "Tag",
+  "plural": "Tags",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {

@@ -32,15 +32,15 @@
     "dataSource": "db",
     "public": false
   },
-  "thing": {
+  "Thing": {
     "dataSource": "db",
     "public": true
   },
-  "tag": {
+  "Tag": {
     "dataSource": "db",
     "public": true
   },
-  "thing_tag": {
+  "ThingTag": {
     "dataSource": "db",
     "public": false
   }

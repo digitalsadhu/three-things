@@ -1,6 +1,6 @@
 {
-  "name": "thing",
-  "plural": "things",
+  "name": "Thing",
+  "plural": "Things",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
