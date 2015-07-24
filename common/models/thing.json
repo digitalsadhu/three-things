@@ -27,7 +27,14 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "tags": {
+      "type": "hasMany",
+      "model": "Tag",
+      "foreignKey": "thingId",
+      "through": "ThingTag"
+    }
+  },
   "acls": [],
   "methods": []
 }
