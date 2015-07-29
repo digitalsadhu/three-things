@@ -46,14 +46,8 @@ boot(app, __dirname, function(err) {
     resave: true
   }));
 
-  var config = {};
-  try {
-    config = require('./providers.json');
-  } catch(err) {
-    console.error('Please configure your passport strategy in `providers.json`.');
-    console.error('Copy `providers.json.example` to `providers.json` and replace the clientID/clientSecret values with your own.');
-    process.exit(1);
-  }
+  var config = require('./providers.js');
+
   // Initialize passport
   passportConfigurator.init();
 
