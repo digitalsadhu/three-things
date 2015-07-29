@@ -21,6 +21,33 @@ var path = require('path');
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
+app.use(loopback.context());
+
+// The access token is only available after boot
+app.use(loopback.token({
+  model: app.models.AccessToken,
+  currentUserLiteral: 'me'
+}));
+
+app.use(function setCurrentUser(req, res, next) {
+  if (!req.accessToken) {
+    return next();
+  }
+  app.models.user.findById(req.accessToken.userId, function(err, user) {
+    if (err) {
+      return next(err);
+    }
+    if (!user) {
+      return next(new Error('No user with this access token was found.'));
+    }
+    var loopbackContext = loopback.getCurrentContext();
+    if (loopbackContext) {
+      loopbackContext.set('currentUser', user);
+    }
+    next();
+  });
+});
+
 // Bootstrap the application, configure models, datasources and middleware.
 // Sub-apps like REST API are mounted via boot scripts.
 boot(app, __dirname, function(err) {
@@ -31,12 +58,6 @@ boot(app, __dirname, function(err) {
   // to support URL-encoded bodies
   app.middleware('parse', bodyParser.urlencoded({
     extended: true
-  }));
-
-  // The access token is only available after boot
-  app.middleware('auth', loopback.token({
-    model: app.models.AccessToken,
-    currentUserLiteral: 'me'
   }));
 
   app.middleware('session:before', loopback.cookieParser(app.get('cookieSecret')));
