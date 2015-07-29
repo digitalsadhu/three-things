@@ -4,7 +4,11 @@ module.exports = function(Thing) {
 
   Thing.observe('before save', function addUser(ctx, next) {
     if (ctx.isNewInstance) {
-      ctx.instance.userId = loopback.getCurrentContext().get('currentUser').id;
+      var user = loopback.getCurrentContext().get('currentUser');
+
+      if (!user) next(new Error('Please login to create a thing'));
+
+      ctx.instance.userId = user.id;
     }
     next();
   });
