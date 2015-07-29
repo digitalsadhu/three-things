@@ -44,5 +44,13 @@
   "user": {
     "dataSource": "db",
     "public": true
+  },
+  "UserCredential": {
+    "dataSource": "db",
+    "public": false
+  },
+  "UserIdentity": {
+    "dataSource": "db",
+    "public": false
   }
 }
