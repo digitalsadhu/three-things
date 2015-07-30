@@ -4,7 +4,8 @@
   "main": "server/server.js",
   "scripts": {
     "pretest": "jshint .",
-    "start": "node server/server.js"
+    "start": "node server/server.js",
+    "start:dev": "source .env && npm run start"
   },
   "dependencies": {
     "body-parser": "^1.13.2",
